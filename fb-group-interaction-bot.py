@@ -237,8 +237,11 @@ def process_account(email, password):
 
     driver.quit()
 
-with open('metadata.json', 'r') as file:
-    accounts = json.load(file)
+import csv
+
+with open('metadata.csv', 'r') as file:
+    reader = csv.DictReader(file)
+    accounts = list(reader)
 
 for account in accounts:
     process_account(account['email'], account['password'])

@@ -2,3 +2,4 @@ venv
 metadata.json
 dist
 .env
+fb.db
