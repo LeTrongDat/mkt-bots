@@ -1,0 +1,4 @@
+venv
+metadata.json
+dist
+.env
