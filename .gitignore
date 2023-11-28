@@ -1,5 +1,5 @@
 venv
-metadata.json
+metadata.csv
 dist
 .env
 fb.db
