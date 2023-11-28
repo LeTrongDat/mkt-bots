@@ -200,7 +200,7 @@ def process_account(email, password):
     driver.find_element(By.NAME, "login").click()
 
     time.sleep(15)
-    driver.get("https://www.facebook.com/groups/1196099411099406")
+    driver.get(os.getenv("TARGET_GROUP"))
     time.sleep(5)
 
     start_time = time.time()
@@ -237,8 +237,11 @@ def process_account(email, password):
 
     driver.quit()
 
-with open('metadata.json', 'r') as file:
-    accounts = json.load(file)
+import csv
+
+with open('metadata.csv', 'r') as file:
+    reader = csv.DictReader(file)
+    accounts = list(reader)
 
 for account in accounts:
     process_account(account['email'], account['password'])
